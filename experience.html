@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Individual Website</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <audio autoplay src="audio/euphoria.mp3"></audio>
+    <!--header-->
+    <div class="row">
+        <header>
+            <nav>
+                <ul>
+                    <li> <a href="index.html">Introduction</a> </li>
+                    <li> <a href="biodata.html">Biodata</a> </li>
+                    <li> <a href="experience.html">Experience</a> </li>
+                    <li> <a href="education.html">Education</a> </li>
+                    <li> <a href="gallery.html">Gallery</a> </li>
+                    <li> <a href="family.html">Family</a> </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!--Experience-->
+    <section>
+        <div id="experience" class="row">
+            <div class="eleven">
+                <h1 style="text-align: center; font-family: 'Lucida Sans'; padding-left:20px">Experiences</h1>
+            </div>
+            <div id="slide1" class="slideshow-container">
+                <div class="mySlides fade">
+                    <p>My experience in the study of a diploma of information management in UiTM Kedah for two and a half years which is a 
+                        total of five semesters to finish my studies.First of all, I choose this course as my number one pick in UPU because
+                        my parents choose it for me and it is the same standard as my result SPM. Most people do not know what the course of
+                        information management is for including myself. For me, information management is designed to produce professionals 
+                        who are conversant in the delivery of knowledge services in organizations and have the skills to manage information 
+                        in a digitized format. The learning experiences will include among others, the organization of information, librarianship
+                        skills, database fundamentals, management of information resources including electronic and digital resources, and 
+                        developing our information literacy.</p>
+                </div>
+                 <div class="mySlides fade">
+                    <p>COURSE OUTLINE</p>
+                    <p>Semester 1</p>
+                    <ul>
+                        <li>Fundamentals of Islam</li>
+                        <li>Integrated Language Skills I</li>
+                        <li>National Kesatria I</li>
+                        <li>Introduction to Information Skills</li>
+                        <li>Introduction to Information Management</li>
+                        <li>Information and Communication Technology Application</li>
+                        <li>Study Skills</li>
+                    </ul>
+                </div>
+                <div class="mySlides fade">
+                    <p>Semester 2</p>
+                    <ul>
+                        <li>Fundamentals of Islam II</li>
+                        <li>Integrated Language Skills II</li>
+                        <li>National Kesatria II</li>
+                        <li>Communication Skills for Information Professionals</li>
+                        <li>Introduction to School Resource Center</li>
+                        <li>Foundation of Records Management</li>
+                        <li>Access to Information</li>
+                    </ul>
+                </div>
+                <div class="mySlides fade">
+                    <p>Semester 3</p>
+                    <ul>
+                        <li>Islamic Information Management</li>
+                        <li>Integrated Language Skills III</li>
+                        <li>National Kesatria III</li>
+                        <li>Instructional Media Application</li>
+                        <li>Introduction to Electronic Record Keeping</li>
+                        <li>Organization of Information</li>
+                        <li>Electronic Publishing</li>
+                    </ul>
+                </div>
+                <div class="mySlides fade">
+                    <p>Semester 4</p>
+                    <ul>
+                        <li>Social Media Literacy</li>
+                        <li>Technical Support Services and Maintenance for Information Agencies</li>
+                        <li>Introduction to Cataloging</li>
+                        <li>Management of Records Center</li>
+                        <li>Information Technology Application in Information Agencies</li>
+                        <li>Multimedia for Information Presentation</li>
+                        <li>Promotion of Information Products and Services</li>
+                    </ul>
+                </div>
+                <div class="mySlides fade">
+                    <p>Semester 5</p>
+                    <ul>
+                        <li>Introduction to Web Content Management and Design</li>
+                        <li>Reference and Information Services for Information Agencies</li>
+                        <li>Foundation of Archives</li>
+                        <li>xtension Services for Information Agencies</li>
+                        <li>Management of Libraries and Resource Center</li>
+                    </ul>
+                </div>
+                <div class="mySlides fade">
+                    <p>Throughout the whole two and a half years of studying a diploma of information have to give me many experiences 
+                        and challenges on finishing my study to pursue on a degree level. They are many things that I have learned from 
+                        my life in university, lecturers, and my friends. There are when my friends and I able to cooperate and sometimes 
+                        we had a misunderstanding in completing the assignments that are given by the lecturer. We were sometimes happy, 
+                        laugh, stress, and even cry to finish our assignments together. Sometimes, I am giving up on my studies but there 
+                        are my family and friends are there to support me and gave me some advice to light up my spirit, and I thankful for 
+                        that. In my opinion, all things that we have gone through in this world are never easy but if we keep on going without 
+                        giving up even though we face many failures in our life, then we might achieve our goals.</p>
+                </div>
+
+                <!--Next/prev buttons-->
+                <a class="prev" onclick="plusSlides(-1,slide1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1,slide1)">&#10095;</a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!--footer-->
+    <div class="row">
+        <footer>
+            <p>Copyright © 2020 - Nareesa Official Website</p>
+        </footer>
+    </div>
+    
+    <script>
+        //slideshow
+        var slide1 = document.getElementById("slide1");
+        slide1.currentSlideIndex = 1;
+        showSlides(slide1.currentSlideIndex, slide1);
+
+        //slide control next/prev
+        function plusSlides(n, slide) {
+            showSlides(slide.currentSlideIndex += n, slide);
+        }
+        
+        function currentSlide(n, slide) {
+            showSlides(slide.currentSlideIndex = n, slide);
+        }
+
+        function showSlides(n, slide) {
+
+            var i;
+            var slides = slide.getElementsByClassName("mySlides");
+
+            if (n > slides.length) {slide.currentSlideIndex = 1}    
+            if (n < 1) {slide.currentSlideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            slides[slide.currentSlideIndex-1].style.display = "block";  
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Individual Website</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <audio autoplay src="audio/euphoria.mp3"></audio>
+    <!--header-->
+    <div class="row">
+        <header>
+            <nav>
+                <ul>
+                    <li> <a href="index.html">Introduction</a> </li>
+                    <li> <a href="biodata.html">Biodata</a> </li>
+                    <li> <a href="experience.html">Experience</a> </li>
+                    <li> <a href="education.html">Education</a> </li>
+                    <li> <a href="gallery.html">Gallery</a> </li>
+                    <li> <a href="family.html">Family</a> </li>
+                    <li>
+                        <button onclick="document.getElementById('credit').style.display='block'">
+                        <img src="images/profile.png" class="profile" alt="credit"><br>Show Credit</br></button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!--Main-->
+    <section class="main">
+        <div class="row" id="wrapper">
+            <div class="eleven" id="container">
+                <h1 class="title">NAREESA OFFICIAL WEBSITE</h1>
+            </div>
+
+            <script>
+                function clock() {
+                let date = new Date();
+                let hrs = date.getHours();
+                let mins = date.getMinutes();
+                let secs = date.getSeconds();
+                let period = "AM";
+
+                if (hrs == 0) hrs = 12;
+                if (hrs > 12) {
+                    hrs = hrs - 12;
+                    period = "PM";
+                }
+
+                hrs = hrs < 10 ? `0${hrs}` : hrs;
+                mins = mins < 10 ? `0${mins}` : mins;
+                secs = secs < 10 ? `0${secs}` : secs;
+
+                let time = `${hrs}:${mins}:${secs} ${period}`;
+                setInterval(clock, 1000);
+                document.getElementById("clock").innerText = time;
+                }
+            </script>
+            <div id="clock" class="six"><script>clock();</script></div>
+
+            <div class="five">
+                <div class="caption" style="text-align: center;">
+                    <h1>IMD311 INDIVIDUAL WEBSITE ASSIGNMENT</h1>
+                    <p style="font-size: 20px;">
+                        This personal website was designed to fulfil IMD311 requirement in creating an 
+                        individual website assignment that given by the lecturer. The content of this website 
+                        is about my personal information such as biodata, experience, education, family, gallery 
+                        and others.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <a href="#ack"><input type="image" src="images/arrow-down.png" id="arrow-down" Title="See More"></a>
+            <p style="margin-left: 41%;">Click Arrow to Go Down</p>
+        </div>
+
+    </section>
+
+    <!--Acknowledgement-->
+    <section>
+        <div id="ack" class="row">
+            <div class="container">
+                <h1 style="text-decoration: underline;">ACKNOWLEDGEMENT</h1>
+                <p style="font-size: 20px;">
+                    First of all, I would like to thank God that I am able to finish this assignment that 
+                    has been given by the lecturer to me. This task has been done with all effort and 
+                    dedication that I can afford.
+                </p>
+                <p style="font-size: 20px;">
+                    Besides that, a big thanks to our lecturer because of his effort on guiding me to complete
+                    this task. He willingness to help me in understanding the task, searching the correct 
+                    info and teaching me the correct way in doing this correctly. Advice given by him as a 
+                    lecturer has been a great help in completing this task.
+                </p>
+                <p style="font-size: 20px;">
+                    Moreover, I would like to thank my family for their support and concern. My family always 
+                    helps me in providing moral support when I feel down in doing this task. With the help of 
+                    them, I managed to overcome all the problems and managed to finish this individual 
+                    assignment.
+                </p>
+                <p style="font-size: 20px;">
+                    Finally, to my fellow friends who have been by my side in completing this task by giving 
+                    me some motivation, support and consideration in order to produce a good and quality assignment 
+                    with all effort and responsibility. They also give me some guidance if I ask something about the 
+                    task that I did not know.
+                </p>
+            </div>
+            <p class="c-text">Current Time Spent on Page
+                <label id="minutes">00</label>
+                <label id="divider">:</label>
+                <label id="seconds">00</label>
+            </p>
+        </div>
+    </section>
+    <script>
+        var minutesLabel = document.getElementById("minutes");
+        var secondsLabel = document.getElementById("seconds");
+        var totalSeconds = 0;
+        setInterval(setTime, 1000);
+
+        function setTime() {
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds % 60);
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+        }
+
+        function pad(val) {
+            var valString = val + "";
+            if (valString.length < 2) {
+                return "0" + valString;
+            } else {
+                return valString;
+            }
+        }
+    </script>
+    <!--footer-->
+    <div class="row">
+        <footer>
+            <p>Copyright © 2020 - Nareesa Official Website</p>
+        </footer>
+    </div>
+    
+    <!--credit form-->
+    <div id="credit" class="form">
+  
+        <form class="form-content animate" method="post">
+                
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('credit').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                <img src="images/passport.jpg" alt="icon" class="box-logo">
+                <p>Design by: Nur Nareesa Azalia binti Zanizam</p>
+                <p>Class: KIM1105B</p>
+                <p>IMD311: Introduction to Web Content Management and Design</p>
+                <p>Individual Project: Personal Website</p>
+                <p>Prepared for: Sir Mohd Firdaus Mohd Helmi</p>
+            </div>
+            
+        </form>
+    
+    </div>
+
+    <script>
+        //get login box form
+        var modal = document.getElementById('credit');
+
+        //close when user click out of login box form
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
